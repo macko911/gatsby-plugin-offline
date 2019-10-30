@@ -53,6 +53,10 @@ const MessageAPI = {
   disableOfflineShell: () => {
     offlineShellEnabled = false
   },
+
+  resetWhitelist: event => {
+    event.waitUntil(idbKeyval.clear())
+  },
 }
 
 self.addEventListener(`message`, event => {
